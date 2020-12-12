@@ -43,4 +43,27 @@ class ProcessoController extends Controller
         return redirect()->route('admin.processo');
     }
     
+    public function detalhe($id)
+    {
+        //$processo = Processo::where('id', $id)->first();
+
+        if(!$processo = Processo::find($id))
+        redirect()->back();
+       return view('admin.processo.detalhe',[
+           'processo' => $processo
+       ]);
+    }
+
+    public function apagar($id)
+    {
+        if(!$processo = Processo::find($id))
+        return redirect()->back();
+
+        
+        $processo->delete();
+
+        return redirect()->route('admin.processo');
+    }
+
+    
 }

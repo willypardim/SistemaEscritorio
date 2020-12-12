@@ -1,6 +1,6 @@
+@extends('layouts.app')
 
-@extends('layouts.frame')
-
+@section('content')
 <div class="container">
   <form method="POST" action="{{ route('processo.store')}}">
     @csrf
@@ -10,7 +10,7 @@
             <input type="number" class="form-control"  name="number" id="validationDefault01" placeholder="Nº Processo" value="00" {{old('number')}} required>
           </div>
           <div class="col-md-4 mb-3">
-            <label for="validationDefault02">Favorecido</label>
+            <label for="validationDefault02">Título Processo:</label>
             <input type="text" class="form-control" name="name" id="validationDefault02" placeholder="Favorecido" {{old('name')}} required>
           </div>
         </div>
@@ -24,9 +24,9 @@
             <input type="date" class="form-control" name="date" id="validationDefault04" placeholder="Data" required>
           </div>
         </div>
-
-
       <button class="btn btn-primary" type="submit">Enviar</button>
-      <button type="button" class="btn btn-danger"><a href="{{ route('admin.processo')}}" style="color: white";>Cancel</a></button>
+      <button type="button" class="btn btn-danger"><a href="{{ route('admin.home')}}" style="color: white";>Cancel</a></button>
   </form>
 </div>
+@endsection
+
