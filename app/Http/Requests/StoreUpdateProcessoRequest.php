@@ -24,7 +24,18 @@ class StoreUpdateProcessoRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'number' => 'required',
+            'name' => 'required|min:3|max:255',
+            'client' => 'required|min:3|max:255',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'number.required' => 'Numero é obrigatório',
+            'name.min' => 'Ops! Informe pelo menos 3 caracteres em Título processo',
+            'client.min' => 'Ops! Informe pelo menos 3 caracteres em cliente',
         ];
     }
 }

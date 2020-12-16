@@ -15,4 +15,6 @@ Route::post('/home/processo', [App\Http\Controllers\Admin\ProcessoController::cl
 Route::get('/home/processo/cadastrar', [App\Http\Controllers\Admin\ProcessoController::class, 'cadastrar'])->name('inserir.processo')->middleware('auth');
 Route::get('/home/processo/detalhes/{id}', [App\Http\Controllers\Admin\ProcessoController::class, 'detalhe'])->name('detalhe.processo')->middleware('auth');
 Route::any('/home/processo/delete/{id}', [App\Http\Controllers\Admin\ProcessoController::class, 'apagar'])->name('delete.processo')->middleware('auth');
+Route::any('/home/processo/editar/{id}', [App\Http\Controllers\Admin\ProcessoController::class, 'editar'])->name('processo.editar')->middleware('auth');
+Route::any('/home/processo/update/{id}', [App\Http\Controllers\Admin\ProcessoController::class, 'update'])->name('processo.update')->middleware('auth');
 
