@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Models\Processo;
+use App\Models\Agenda;
 use Prophecy\Exception\Doubler\ReturnByReferenceException;
 
 class User extends Authenticatable
@@ -45,5 +46,10 @@ class User extends Authenticatable
     public function processo()
     {
         return $this->hasMany(Processo::class);
+    }
+
+    public function agenda()
+    {
+        return $this->hasMany(Agenda::class);
     }
 }

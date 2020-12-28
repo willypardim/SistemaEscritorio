@@ -33,23 +33,23 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm">
-                        <a href="#" style="text-decoration: none;">
+                        <a href="{{ route('agenda.index') }}" style="text-decoration: none;">
                             <div class="card border-muted mb-3 shadow-sm p-3 mb-5 bg-white rounded" style="max-width: 18rem;">
                                 <div class="card-header text-body bg-white">Consulte</div>
                                 <div class="card-body text-dark">
-                                  <h5 class="card-title">Consultar Clientes</h5>
-                                  <p class="card-text">Clique aqui para consultar os dados de um cliente.</p>
+                                  <h5 class="card-title">Consultar Agenda</h5>
+                                  <p class="card-text">Clique aqui para consultar sua agenda.</p>
                                 </div>
                             </div>
                         </a>
                     </div>
                     <div class="col-sm">
-                        <a href="#" style="text-decoration: none;">
+                        <a href="{{  route('agenda.create')   }}" style="text-decoration: none;">
                             <div class="card border-muted mb-3 shadow-sm p-3 mb-5 bg-white rounded" style="max-width: 18rem;">
                                 <div class="card-header text-body bg-white">Cadastre</div>
                                 <div class="card-body text-dark">
-                                  <h5 class="card-title">Cadastrar clientes</h5>
-                                  <p class="card-text">Clique aqui para cadastrar os dados de um novo cliente.</p>
+                                  <h5 class="card-title">Marcar na Agenda</h5>
+                                  <p class="card-text">Clique aqui para marcar horário na agenda.</p>
                                 </div>
                             </div>
                         </a>

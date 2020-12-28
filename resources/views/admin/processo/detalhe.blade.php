@@ -1,44 +1,39 @@
 @extends('layouts.app')
 
 @section('content')
+  <div class="container py-3 px-md-5 border bg-light shadow-sm p-3 mb-5 rounded " style="margin-top: 30px;">
+    <h4 class="text-center" style="margin-bottom: 30px;">{{ $processo->tituloprocesso }}</h4>
 
+    <dl class="row">
+        
+      <dt class="col-sm-3">Processo Nº</dt>
+      <dd class="col-sm-9">
+        <p>{{ $processo->number }}</p>
+      </dd>
 
-  <div class="container" style="margin-top: 30px;">
-    <h4 class="text-center" style="margin-bottom: 30px;">{{ $processo->name }}</h4>
+      <dt class="col-sm-3">Interessado</dt>
+      <dd class="col-sm-9"> {{ $processo->parteinteressada }}</dd>
 
-  <dl class="row">
-      
-    <dt class="col-sm-3">Nome</dt>
-    <dd class="col-sm-9"> {{ $processo->client }}</dd>
+      <dt class="col-sm-3">Processado</dt>
+      <dd class="col-sm-9"> {{ $processo->parteprocessada }}</dd>
 
-    <dt class="col-sm-3">Processo Nº</dt>
-    <dd class="col-sm-9">
-      <p>{{ $processo->number }}</p>
-    </dd>
+      <dt class="col-sm-3">Data Início</dt>
+      <dd class="col-sm-9">
+        <p>{{ $processo->date }}</p>
+      </dd>
 
-    <dt class="col-sm-3">Data</dt>
-    <dd class="col-sm-9">
-      <p>{{ $processo->date }}</p>
-    </dd>
+      <dt class="col-sm-3">Descrição</dt>
+      <dd class="col-sm-9">{{ $processo->descricao }}</dd>
 
-    <dt class="col-sm-3">Descrição</dt>
-    <dd class="col-sm-9">Este é apenas um breve texto de exemplo para que futuramente tenha textos digitados excepcionalmente pelo usuário, um texto como base para teste do layout. E essa será a parte onde ficará os comentários realizados pelo usuário
-    </dd>
+      <dt class="col-sm-3">Relatório</dt>
+      <dd class="col-sm-9">{{ $processo->relatorio }}</dd>
 
-    <dt class="col-sm-3 text-truncate">Comentários</dt>
-    <dd class="col-sm-9"><p><em>Este é apenas um breve texto de exemplo para que futuramente tenha textos digitados excepcionalmente pelo usuário, um texto como base para teste do layout. E essa será a parte onde ficará os comentários realizados pelo usuário</em></p>
-    </dd>
-  </dl>
+      <dt class="col-sm-3 text-truncate">Comentários</dt>
+      <dd class="col-sm-9">
+        <p><em>{{ $processo->comentario }}</em></p>
+      </dd>
+
+    </dl>
+    @include('admin.processo._partials.botoesmodif') 
   </div> 
-
-  <form action="{{ route('delete.processo', $processo->id) }}" method="post" class="btn">
-    @csrf
-    @method('DELETE')
-    <button type="submit" class="btn btn-outline-danger btn-sm">Excluir
-      <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-        <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-      </svg>
-    </button>
-  </form>
 @endsection

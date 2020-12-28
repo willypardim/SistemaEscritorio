@@ -68,8 +68,8 @@
                                     <a class="dropdown-item" href="{{ route('inserir.processo') }}">
                                         Processo
                                     </a>
-                                    <a class="dropdown-item" href="#">
-                                        Cliente
+                                    <a class="dropdown-item" href="{{  route('agenda.create')  }}">
+                                        Agendamentos
                                     </a>
                                 </div>
                             </li>
@@ -83,8 +83,8 @@
                                 <a class="dropdown-item" href="{{ route('admin.processo') }}">
                                         Processos
                                     </a>
-                                    <a class="dropdown-item" href="#">
-                                        Dados de clientes
+                                    <a class="dropdown-item" href="{{  route('agenda.index')  }}">
+                                        Agenda
                                     </a>
                                 </div>
                             </li>

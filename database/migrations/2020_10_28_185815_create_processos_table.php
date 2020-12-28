@@ -14,13 +14,16 @@ class CreateProcessosTable extends Migration
     public function up()
     {
         Schema::create('processos', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('number');
-            $table->string('name');
-            $table->string('client');
+            $table->string('tituloprocesso', 255);
             $table->date('date');
+            $table->string('parteinteressada', 100);
+            $table->string('parteprocessada', 100);
+            $table->string('descricao', 2500);
+            $table->string('relatorio', 2500);
+            $table->string('comentario', 2500);
             $table->timestamps();
         });
     }

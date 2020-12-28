@@ -9,7 +9,15 @@ class Processo extends Model
 {
     use HasFactory;
     
-    protected $fillable = ['number', 'name', 'client', 'date','user_id'];
-
-
+    protected $fillable = [
+        'number', 
+        'tituloprocesso',
+        'date',
+        'parteinteressada',
+        'parteprocessada',
+        'descricao',
+        'relatorio',
+        'comentario',
+        'user_id'
+    ];
 }

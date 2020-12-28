@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AgendaController;
 
 
 
@@ -18,3 +19,7 @@ Route::any('/home/processo/delete/{id}', [App\Http\Controllers\Admin\ProcessoCon
 Route::any('/home/processo/editar/{id}', [App\Http\Controllers\Admin\ProcessoController::class, 'editar'])->name('processo.editar')->middleware('auth');
 Route::any('/home/processo/update/{id}', [App\Http\Controllers\Admin\ProcessoController::class, 'update'])->name('processo.update')->middleware('auth');
 
+
+Route::resource('agenda', AgendaController::class)->middleware('auth');
+
+Route::get('/home/selecionar', [App\Http\Controllers\Admin\ProcessoController::class, 'selecionar'])->name('teste.teste')->middleware('auth');

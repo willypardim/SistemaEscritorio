@@ -31,22 +31,20 @@ class ProcessoController extends Controller
         Processo::create([
             'user_id' => auth()->user()->id, 
             'number' => $request->number,
-            'name' => $request->name,
-            'client' => $request->client,
-            'date' => $request->date
+            'tituloprocesso' => $request->tituloprocesso,
+            'date' => $request->date,
+            'parteinteressada' => $request->parteinteressada,
+            'parteprocessada' => $request->parteprocessada,
+            'descricao' => $request->descricao,
+            'relatorio' => $request->relatorio,
+            'comentario' => $request->comentario
         ]);
-       //auth()->user()->id;
-        
-        /*$data = $request->only(['number', 'name', 'client', 'date']);
-        Processo::create($data);*/
 
         return redirect()->route('admin.processo');
     }
     
     public function detalhe($id)
     {
-        //$processo = Processo::where('id', $id)->first();
-
         if(!$processo = Processo::find($id))
         redirect()->back();
        return view('admin.processo.detalhe',[
@@ -56,13 +54,16 @@ class ProcessoController extends Controller
 
     public function apagar($id)
     {
-        if(!$processo = Processo::find($id))
-        return redirect()->back();
+        try {
+            if(!$processo = Processo::find($id))
+            return redirect()->back();
+            $processo->delete();
 
+            return redirect()->route('admin.processo');
+        } catch (\Throwable $th) {
+            return view('admin.includes.alertcaution');
+        }
         
-        $processo->delete();
-
-        return redirect()->route('admin.processo');
     }
 
     public function editar($id)
@@ -82,5 +83,11 @@ class ProcessoController extends Controller
 
         return redirect()->route('admin.processo');
     }
-    
+
+    public function selecionar()
+    {
+        $processos = auth()->user()->processo;
+
+        return view('Admin.agenda.teste', compact(['processos']));
+    }
 }
