@@ -86,8 +86,8 @@ class ProcessoController extends Controller
 
     public function selecionar()
     {
-        $processos = auth()->user()->processo;
+        
 
-        return view('Admin.agenda.teste', compact(['processos']));
+        return view('testes.teste');
     }
 }

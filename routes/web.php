@@ -21,5 +21,3 @@ Route::any('/home/processo/update/{id}', [App\Http\Controllers\Admin\ProcessoCon
 
 
 Route::resource('agenda', AgendaController::class)->middleware('auth');
-
-Route::get('/home/selecionar', [App\Http\Controllers\Admin\ProcessoController::class, 'selecionar'])->name('teste.teste')->middleware('auth');

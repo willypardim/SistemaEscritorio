@@ -18,12 +18,15 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{asset('assets/lawyer/css/app.css')}}">
     
      <!-- Styles -->
      @extends('layouts.frame')
     @stack('styles')
 </head>
-<body>
+<body style="background-color: rgb(238, 236, 236)">
     <div>
         <nav class="navbar navbar-expand-md navbar-light bg-dark shadow-sm" style="position: sticky;
         top: 0; z-index: 3;">

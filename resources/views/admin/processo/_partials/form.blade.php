@@ -1,55 +1,74 @@
+
+
 @include('admin.includes.alerts')
 @csrf
 
-  <div class="form-row">
-    <div class="col">
-      <label for="validationDefault04">Nº</label>
-      <input type="number" class="form-control" name="number" value="{{ $processo->number ?? old('number')}}" placeholder="Nº Processo">
-    </div>
-    <div class="col-8">
-      <label for="validationDefault04">Título</label>
-      <input type="text" class="form-control" name="tituloprocesso" value="{{ $processo->tituloprocesso ?? old('tituloprocesso')}}" placeholder="Título da causa">
-    </div>
-    <div class="col">
-      <label for="validationDefault04">Data Início</label>
-      <input type="date" class="form-control" name="date" id="validationDefault04" placeholder="Data" value="{{ $processo->date ?? old('date')}}" required>
+<div class="form-row">
+  <div class="col-sm mt-3">
+    <div class="label-float">
+      <input type="number" name="number" value="{{ $processo->number ?? old('number')}}" placeholder=" "/>
+      <label>Nº</label>
     </div>
   </div>
+  <div class="col-sm mt-3">
+    <div class="label-float">
+      <input type="text" name="tituloprocesso" value="{{ $processo->tituloprocesso ?? old('tituloprocesso')}}" placeholder=" "/>
+      <label>Titulo da causa</label>
+    </div>
+  </div>
+  <div class="col-sm mt-3">
+    <div class="label-float">
+      <input type="date" name="date"  value="{{ $processo->date ?? old('date')}}" placeholder=" "/>
+      <label>Data início</label>
+    </div>
+  </div>
+</div>
 
-  <div class="form-row">
-    <div class="col-6">
-      <label for="validationDefault04">Cliente</label>
-      <input type="text" class="form-control" name="parteinteressada" value="{{ $processo->parteinteressada ?? old('parteinteressada')}}"  placeholder="Parte interessada">
-    </div>
-    <div class="col-6">
-      <label for="validationDefault04">Parte Processada</label>
-      <input type="text" class="form-control" name="parteprocessada" value="{{ $processo->parteprocessada ?? old('parteprocessada')}}" placeholder="Parte Processada">
-    </div>
-  </div>
 
-  <div class="form-row">
-    <div class="col">
-      <label for="validationDefault04">Descrição</label>
-      <textarea class="form-control" id="validationTextarea" name="descricao" value="{{ $processo->descricao ?? old('descricao')}}" placeholder="Digite uma breve descrição" required></textarea> 
+<div class="form-row">
+  <div class="col-sm mt-3">
+    <div class="label-float">
+      <input type="text" name="parteinteressada" value="{{ $processo->parteinteressada ?? old('parteinteressada')}}" placeholder=" "/>
+      <label>Cliente</label>
     </div>
   </div>
+  <div class="col-sm mt-3">
+    <div class="label-float">
+      <input type="text" name="parteprocessada" value="{{ $processo->parteprocessada ?? old('parteprocessada')}}" placeholder=" "/>
+      <label>Parte processada</label>
+    </div>
+  </div>
+</div>
 
-  <div class="form-row">
-    <div class="col">
-      <label for="validationDefault04">Relatório</label>
-      <textarea class="form-control" id="validationTextarea" name="relatorio" value="{{ $processo->relatorio ?? old('relatorio')}}" placeholder="Digite um breve relatório" required></textarea> 
+<div class="form-row">
+  <div class="col-sm mt-3">
+    <div class="label-float">
+      <input type="text" name="descricao" value="{{ $processo->descricao ?? old('descricao')}}" placeholder=" "/>
+      <label>Descrição</label>
     </div>
   </div>
+</div>
 
-  <div class="form-row">
-    <div class="col">
-      <label for="validationDefault04">Comentário</label>
-      <textarea class="form-control" id="validationTextarea" name="comentario" value="{{ $processo->comentario ?? old('comentario')}}" placeholder="Digite um breve comentário" required></textarea> 
+<div class="form-row">
+  <div class="col-sm mt-3">
+    <div class="label-float">
+      <input type="text" name="relatorio" value="{{ $processo->relatorio ?? old('relatorio')}}" placeholder=" "/>
+      <label>Relatório</label>
     </div>
   </div>
+</div>
+
+<div class="form-row">
+  <div class="col-sm mt-3">
+    <div class="label-float">
+      <input type="text" name="comentario" value="{{ $processo->comentario ?? old('comentario')}}" placeholder=" "/>
+      <label>Comentário</label>
+    </div>
+  </div>
+</div>
   
   <!-- Botão para acionar modal -->
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalExemplo">
+  <button type="button" class="btn btn-primary mt-5" data-toggle="modal" data-target="#modalExemplo">
     Cadastrar
   </button>
 
@@ -76,7 +95,7 @@
 
 
   
-  <button type="button" class="btn btn-danger"><a href="{{ route('admin.home')}}" style="color: white";>Cancelar</a></button>
+  <button type="button" class="btn btn-danger mt-5"><a href="{{ route('admin.home')}}" style="color: white";>Cancelar</a></button>
 
 
 
